@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "ec64695c-d14e-4266-82fa-a57051f20ac2",
+		"name": "translider-d",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20947565"
+	},
+	"item": [
+		{
+			"name": "GET main page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.translider-d.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST valid data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Autorization }}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"formProperties\":{\"formName\":\"Контакты\",\"formId\":\"comp-kako1gnv\"},\"emailConfig\":{\"sendToOwnerAndEmails\":{\"emailIds\":[]}},\"viewMode\":\"Site\",\"fields\":[{\"fieldId\":\"comp-kako1gok\",\"label\":\"name\",\"firstName\":{\"value\":\"name\"}},{\"fieldId\":\"comp-kako1gou2\",\"label\":\"email\",\"email\":{\"value\":\"deals@edmtxy.gearbest.com\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1gox\",\"label\":\"phone\",\"phone\":{\"value\":\"+380987456321\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1goz1\",\"label\":\"mesage\",\"additional\":{\"value\":{\"string\":\"rh\"}}}],\"labelKeys\":[\"custom.kontakty\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.translider-d.com/_api/wix-forms/v1/submit-form",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						"_api",
+						"wix-forms",
+						"v1",
+						"submit-form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid data, missing @",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.expect(pm.response.json().message).to.be.string;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Autorization }}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"formProperties\":{\"formName\":\"Контакты\",\"formId\":\"comp-kako1gnv\"},\"emailConfig\":{\"sendToOwnerAndEmails\":{\"emailIds\":[]}},\"viewMode\":\"Site\",\"fields\":[{\"fieldId\":\"comp-kako1gok\",\"label\":\"name\",\"firstName\":{\"value\":\"name\"}},{\"fieldId\":\"comp-kako1gou2\",\"label\":\"email\",\"email\":{\"value\":\"dealsedmtxy.gearbest.com\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1gox\",\"label\":\"phone\",\"phone\":{\"value\":\"+380987456321\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1goz1\",\"label\":\"mesage\",\"additional\":{\"value\":{\"string\":\"rh\"}}}],\"labelKeys\":[\"custom.kontakty\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.translider-d.com/_api/wix-forms/v1/submit-form",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						"_api",
+						"wix-forms",
+						"v1",
+						"submit-form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid data, missing .",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.expect(pm.response.json().message).to.be.string;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Autorization }}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"formProperties\":{\"formName\":\"Контакты\",\"formId\":\"comp-kako1gnv\"},\"emailConfig\":{\"sendToOwnerAndEmails\":{\"emailIds\":[]}},\"viewMode\":\"Site\",\"fields\":[{\"fieldId\":\"comp-kako1gok\",\"label\":\"name\",\"firstName\":{\"value\":\"name\"}},{\"fieldId\":\"comp-kako1gou2\",\"label\":\"email\",\"email\":{\"value\":\"deals@edmtxygearbestcom\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1gox\",\"label\":\"phone\",\"phone\":{\"value\":\"+380987456321\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1goz1\",\"label\":\"mesage\",\"additional\":{\"value\":{\"string\":\"rh\"}}}],\"labelKeys\":[\"custom.kontakty\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.translider-d.com/_api/wix-forms/v1/submit-form",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						"_api",
+						"wix-forms",
+						"v1",
+						"submit-form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid data, empty fields",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"    pm.expect(pm.response.json().message).to.be.string;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Autorization }}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"formProperties\":{\"formName\":\"Контакты\",\"formId\":\"comp-kako1gnv\"},\"emailConfig\":{\"sendToOwnerAndEmails\":{\"emailIds\":[]}},\"viewMode\":\"Site\",\"fields\":[{\"fieldId\":\"comp-kako1gok\",\"label\":\"name\",\"firstName\":{\"value\":\"name\"}},{\"fieldId\":\"comp-kako1gou2\",\"label\":\"email\",\"email\":{\"value\":null,\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1gox\",\"label\":\"phone\",\"phone\":{\"value\":null,\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1goz1\",\"label\":\"mesage\",\"additional\":{\"value\":{\"string\":null}}}],\"labelKeys\":[\"custom.kontakty\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.translider-d.com/_api/wix-forms/v1/submit-form",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						"_api",
+						"wix-forms",
+						"v1",
+						"submit-form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST invalid data, empty email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Autorization }}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"formProperties\":{\"formName\":\"Контакты\",\"formId\":\"comp-kako1gnv\"},\"emailConfig\":{\"sendToOwnerAndEmails\":{\"emailIds\":[]}},\"viewMode\":\"Site\",\"fields\":[{\"fieldId\":\"comp-kako1gok\",\"label\":\"name\",\"firstName\":{\"value\":\"name\"}},{\"fieldId\":\"comp-kako1gou2\",\"label\":\"email\",\"email\":{\"value\":null,\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1gox\",\"label\":\"phone\",\"phone\":{\"value\":\"+380987456321\",\"tag\":\"main\"}},{\"fieldId\":\"comp-kako1goz1\",\"label\":\"mesage\",\"additional\":{\"value\":{\"string\":\"rh\"}}}],\"labelKeys\":[\"custom.kontakty\"]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.translider-d.com/_api/wix-forms/v1/submit-form",
+					"protocol": "https",
+					"host": [
+						"www",
+						"translider-d",
+						"com"
+					],
+					"path": [
+						"_api",
+						"wix-forms",
+						"v1",
+						"submit-form"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Autorization ",
+			"value": "KQ9L-zV_ZIKvwMv2aMxaWhXeSSIHJfnv6ikSJPsufiU.eyJpbnN0YW5jZUlkIjoiOTlhZjcxYjYtZjVlZi00MmEwLWJhOWMtMTJkMWY4NzA3MWMxIiwiYXBwRGVmSWQiOiIxNGNlMTIxNC1iMjc4LWE3ZTQtMTM3My0wMGNlYmQxYmVmN2MiLCJtZXRhU2l0ZUlkIjoiMTE1N2IyZDgtNDFmYi00YTk3LWJhMDItZWRhNzAwYjYyOWM2Iiwic2lnbkRhdGUiOiIyMDIyLTA3LTA0VDEzOjMxOjIxLjA5OFoiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiI3M2I5NmNmOC04NTZjLTQ4M2UtYjVkMC1mY2MxZjdkMmQzYmEiLCJhaWQiOiJmNDljZTQ4My00MzM0LTQ4NGQtYjFmMS1lM2Q5NjcyMmY0NzYiLCJiaVRva2VuIjoiODhmOGMzNmUtYjQxNC0wODM3LTAwOWUtZmY3NmY4YzY1ODA3Iiwic2l0ZU93bmVySWQiOiJmYTliZWI1ZS1hYmZiLTQ0NDQtYWI3Ni1mN2FmOWEzOTVmYjQifQ"
+		}
+	]
+}
